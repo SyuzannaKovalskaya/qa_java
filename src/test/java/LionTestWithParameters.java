@@ -1,4 +1,3 @@
-import com.example.Animal;
 import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
@@ -12,38 +11,22 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
-public class LionTest {
+public class LionTestWithParameters {
     private final String gender;
     private final boolean expected;
-    private final int kittens;
 
-    public LionTest(String gender, boolean expected, int kittens) {
+    public LionTestWithParameters(String gender, boolean expected) {
         this.gender = gender;
         this.expected = expected;
-        this.kittens = kittens;
-
     }
 
 
     @Parameterized.Parameters
     public static Object[][] getLionData() {
         return new Object[][]{
-                {"Самец", true, 1},
-                {"Самка", false, 1},
+                {"Самец", true},
+                {"Самка", false},
         };
-    }
-
-
-    @Test
-    public void lionGenderUnknownTest() {
-        Feline feline = new Feline();
-        Exception exception = assertThrows(Exception.class, () -> {
-            new Lion("Тип не определен", feline);
-        });
-        String expectedMessage = "Используйте допустимые значения пола животного - самец или самка";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     @Test
@@ -65,6 +48,6 @@ public class LionTest {
     public void lionGetKittensTest() throws Exception {
         Feline feline = new Feline();
         Lion lion = new Lion(gender, feline);
-        Assert.assertEquals(kittens, lion.getKittens());
+        Assert.assertEquals(1, lion.getKittens());
     }
 }

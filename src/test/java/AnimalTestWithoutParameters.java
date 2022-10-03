@@ -1,32 +1,11 @@
 import com.example.Animal;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.List;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-@RunWith(Parameterized.class)
-public class AnimalTest {
-    private final String animalClass;
-    private final List<String> food;
-
-    public AnimalTest(String animalClass, List<String> food) {
-        this.animalClass = animalClass;
-        this.food = food;
-    }
-
-    @Parameterized.Parameters
-    public static Object[][] getAnimalData() {
-        return new Object[][]{
-                {"Травоядное", List.of("Трава", "Различные растения")},
-                {"Хищник", List.of("Животные", "Птицы", "Рыба")},
-        };
-    }
-
+public class AnimalTestWithoutParameters {
     @Test
     public void animalGetFoodExeptionTest() {
         Animal animal = new Animal();
@@ -39,14 +18,6 @@ public class AnimalTest {
 
         assertTrue(actualMessage.contains(expectedMessage));
     }
-
-    @Test
-    public void animalGetFoodTest() throws Exception {
-        Animal animal = new Animal();
-        List<String> animalFood = food;
-        Assert.assertEquals(animalFood, animal.getFood(animalClass));
-    }
-
 
     @Test
     public void animalGetChildrenTest() {

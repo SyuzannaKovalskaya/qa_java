@@ -18,7 +18,6 @@ public class Feline extends Animal implements Predator {
         return getKittens();
     }
 
-
     public int getKittens() {
         return getKittens(1);
     }
