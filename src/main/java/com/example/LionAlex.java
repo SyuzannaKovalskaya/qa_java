@@ -1,7 +1,6 @@
 package com.example;
 
 import java.util.List;
-
 public class LionAlex extends Lion {
     public LionAlex(Feline feline) throws Exception {
         super("Самец", feline);

@@ -1,9 +1,7 @@
 package com.example;
-
 import java.util.List;
 
 public class Lion {
-    //Класс Lion не должен зависеть от класса Feline. Используй принцип инъекции зависимостей.
     boolean hasMane;
     private Predator predator;
 

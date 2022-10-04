@@ -2,7 +2,6 @@ import com.example.Feline;
 import com.example.LionAlex;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.List;
 
 public class LionAlexTest {

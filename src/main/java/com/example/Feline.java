@@ -1,5 +1,4 @@
 package com.example;
-
 import java.util.List;
 
 public class Feline extends Animal implements Predator {
@@ -17,7 +16,6 @@ public class Feline extends Animal implements Predator {
     public int getChildren() {
         return getKittens();
     }
-
 
     public int getKittens() {
         return getKittens(1);
